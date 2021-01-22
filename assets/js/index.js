@@ -13,6 +13,7 @@ $(function () {
         });
     })
 })
+
 function getUserInfo() {
     $.ajax({
         url: '/my/userinfo',
@@ -37,11 +38,13 @@ function renderAvatar(user) {
         // 有头像
         $(".layui-nav-img").show().attr("src", user.user_pic);
         $('.text-avatar').hide();
+        
+        // 云端提交第一次少了个else
+    }else{
         //无头像
         $('.layui-nav-img').hide();
         var text = name[0].toUpperCase();
         $('.text-avatar').show().html(text);
-
     }
 
 
